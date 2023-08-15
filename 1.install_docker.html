@@ -1,0 +1,94 @@
+<html>
+
+<head><title>Install Docker On Linux</title></head>
+<body>
+    <h5>Author: Deni Robbiansyah && Src Link: <a href=" https://docs.docker.com/engine/install/centos/" style="text-decoration:none" >Docs.Docker</a></h5>
+    <h1>Install Docker Engine on CentOS</h1>
+    <article>
+        <p>To get started with Docker Engine on CentOS, make sure you meet the prerequisites, and then follow the installation steps.</p>
+
+
+<h2>Requirements</h2> 
+<p>To install Docker Engine, you need a maintained version of one of the following CentOS versions:</p>
+
+<p>- CentOS 7</p>
+<p>- CentOS 8 (stream)</p>
+<p>- CentOS 9 (stream)</p>
+<p>The centos-extras repository must be enabled. This repository is enabled by default, but if you have disabled it, you need to re-enable it.</p>
+
+<h2>Uninstall old versions</h2>
+<p>Older versions of Docker went by the names of docker or docker-engine. Uninstall any such older versions before attempting to install a new version, along with associated dependencies.</p>
+
+<img src="img/install1.png" width="350">
+
+<p>Progres:</p>
+<p><img src="img/remove1.png" width="550">
+
+</p>
+<p>
+    yum might report that you have none of these packages installed.</p>
+
+    <p>Images, containers, volumes, and networks stored in /var/lib/docker/ aren’t automatically removed when you uninstall Docker.</p>
+
+<h2>Installation methods</h2>
+<p>You can install Docker Engine in different ways, depending on your needs:</p>
+
+<p>- You can set up Docker’s repositories and install from them, for ease of installation and upgrade tasks. This is the recommended approach.</p>
+
+<p>- You can download the RPM package and install it manually and manage upgrades completely manually. This is useful in situations such as installing Docker on air-gapped systems with no access to the internet.</p>
+
+<p>- In testing and development environments, you can use automated convenience scripts to install Docker.</p>
+
+<h2>Install using the rpm repository</h2>
+<p>Before you install Docker Engine for the first time on a new host machine, you need to set up the Docker repository. Afterward, you can install and update Docker from the repository.
+</p>
+
+<h3>Set up the repository</h3>
+Install the yum-utils package (which provides the yum-config-manager utility) and set up the repository.
+
+<div style="background-color:aquamarine">
+<h4>yum install -y yum-utils</h4></div>
+<p><img src="img/installutils.png" width="550"></p>
+
+    <div style="background-color:aquamarine">
+<h4>sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</h4>
+</div>
+<p><img src="img/addrepo.png" width="550"></p>
+
+<h3>Docker Engine</h3> 
+<p>1. Install Docker Engine, containerd, and Docker Compose:</p>To install the latest version, run:
+<div style="background-color:aquamarine"><h4>sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin</h4></div>
+<p><img src="img/installdockerce_.png" width="550">
+    <img src="img/installdockerco.png" width="550"></p>
+
+<p>2. Start Docker</p>
+<div style="background-color:aquamarine"> <h4>sudo systemctl start docker</h4></div>
+<p><img src="img/startdocker.png" width="550"></p>
+
+<p>3. Verify that the Docker Engine installation is successful by running the hello-world image.</p>
+
+<div style="background-color:aquamarine"> <h4>sudo docker run hello-world</h4></div>
+<p><img src="img/dockerruntest.png" width="550"></p>
+This command downloads a test image and runs it in a container. When the container runs, it prints a confirmation message and exits.
+
+<p>You have now successfully installed and started Docker Engine.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </article>
+</body>
+
+</html>
