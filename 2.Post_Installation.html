@@ -2,9 +2,41 @@
     <head><title>Post Installation Steps</title>
         <a href="index.html" style="text-decoration:none"><img src="img/home.png" width="25">Home</a>
         <h5>Author: Deni Robbiansyah && Src Link: <a href=" https://docs.docker.com/engine/install/centos/" style="text-decoration:none" >Docs.Docker</a></h5>
+        <style>font{font-weight: bold;}</style>
     </head>
     <body>
         <article>
+            <h1>Linux post-installation steps for Docker Engine</h1>
+            These optional post-installation procedures shows you how to configure your Linux host machine to work better with Docker.
+
+<h1>Manage Docker as a non-root user</h1>
+<p>The Docker daemon binds to a Unix socket, not a TCP port. By default it’s the <font>root</font> user that owns the Unix socket, and other users can only access it using <font>sudo</font>. The Docker daemon always runs as the <font>root</font> user.</p>
+
+<p>If you don’t want to preface the docker command with sudo, create a Unix group called docker and add users to it. When the Docker daemon starts, it creates a Unix socket accessible by members of the docker group. On some Linux distributions, the system automatically creates this group when installing Docker Engine using a package manager. In that case, there is no need for you to manually create the group.</p>
+
+To create the docker group and add your user:
+
+<p>1. Create the docker group.</p>
+<div style="background-color:aquamarine"><font>sudo groupadd docker</font></div>
+<p><img src="img/adduser.png" width="550"></p>
+
+
+<p>2. Add your user to the docker group.</p>
+<div style="background-color:aquamarine"><font>sudo usermod -aG docker $USER</font></div>
+<p><img src="img/dockergroup.png" width="550"></p>
+
+<p>3. Log out and log back in so that your group membership is re-evaluated.</p>
+
+If you’re running Linux in a virtual machine, it may be necessary to restart the virtual machine for changes to take effect.
+
+You can also run the following command to activate the changes to groups:
+
+
+<div style="background-color:aquamarine"><font>newgrp docker</font></div>
+Verify that you can run docker commands without sudo.
+
+
+<div style="background-color:aquamarine"><font>docker run hello-world</font></div>
 
 
 
