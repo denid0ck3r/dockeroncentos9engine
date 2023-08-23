@@ -2,22 +2,41 @@
     <head><title>Belajar Docker</title>
         <a href="index.html" style="text-decoration:none"><img src="img/home.png" width="25">Home</a>
         <h5>Author: Deni Robbiansyah && Src Link: <a href=" https://docs.docker.com/engine/install/centos/" style="text-decoration:none" >Docs.Docker</a></h5>
-        <style>font{font-weight: bold;}</style></head>
+        <style>font{font-weight: bold}</style>
+    </head>
     <body>
         <h1>1. Docker Image</h1>
         <article><font>Image</font> adalah hasil distribution file/package/bundle dari aplikasi kita. Untuk mendapatkan image, dapat mengakses ke registry dockerhub contoh: <font>nginx</font>. (https://hub.docker.com/search?q=nginx)</article>
         <p><img src="img/dockerimagenginx.png" width="550"></p><br>
         <p><img src="img/downloadimage.png" width="550"></p>
-        <p><font>Download Docker Image[NGINX]:</font></p>
-
+        <p><font>Get Docker Image[ex:NGINX]:</font></p>
         <p><img src="img/imagepull.png" width="550"></p>
-        <p>Melihat list docker images</p>
+        <p><font>Show Docker Images</font></p>
         <p><img src="img/imagels.png" width="550"></p>
+        <p><font>Delete Docker Images</font></p>
+        <p><font>PS: </font>Image tidak bisa dihapus jika masih digunakan container (running service</p>
+        <p><img src="img/dockerimagerm.png" width="550"></p><br>
 
         
-        <h1>2. Container</h1> 
+        <h1>2. Docker Container</h1> 
         <font>Container</font> adalah image yang kita running.
+        <p><font>Create Docker Container</font></p>
+        <p style=background-color:aqua; ><font>sudo docker container create --name webserver1 -p 8080:80 nginx:latest</font></p>
+        <p><img src="img/runcontainer.png" width="550"></p>
+        <p><font>Show Docker Container</font></p>
+        <p><img src="img/showcontainer.png" width="550"></p>
+        <p><font>Start Service Docker Container</font></p>
+        <p><img src="img/startcontainer.png" width="550"></p>
+        <p><font>Access Web NGINX</font></p>
+        <p><img src="img/webnginx.png" width="550"></p>
+        <p><font>Stop Service Docker Container</font></p>
+        <p><img src="img/stopcontainer.png" width="550"></p>
+        <p><font>Delete Docker Container</font></p>
+        <p><img src="img/rmcontainer.png" width="550"></p><br>
+
+
         <h1>3. Dockerfile</h1>
+         
 
     </body>
 
